@@ -1,0 +1,33 @@
+.container{
+	padding: 0px !important;
+}
+.LOGO{
+	position: absolute;
+	margin: -5px 0 0 -50px;
+}
+.navbar-brand{
+	padding-left: 50px;
+}
+.navbar-brand img{
+	width: 50px;
+	height: 50px;
+}
+.MColor{
+	background-color: #2980b9;
+}
+.main-bages{
+	margin: 30px 0;
+}
+.main-bages p{
+	background-color: #2980b9;
+	line-height: 100px;
+	color: white;
+	transition: all 0.2s 0.0s ease;
+}
+.main-bages a:hover{
+	text-decoration: none;
+}
+.main-bages a:hover p{
+	background-color: #3498db;
+	font-size: 2em;
+}
