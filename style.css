@@ -37,3 +37,39 @@
 	color: white;
 	font-size: 1em;
 }
+.pers{
+	background-color: #2980b9;
+	height: 100px;
+	margin: 10px 0;
+	padding: 5px 10px;
+}
+.pers td{
+	color: white;
+}
+.pers p{
+	color: white;
+	display: inline-block;
+}
+.pers table{
+	width: 100%;
+}
+.pers .name{
+	color: rgba(255,255,255,.5);
+}
+#sort{
+	background-color: #2980b9;
+	margin: 10px 0;
+	padding: 5px 10px;
+}
+#sort p{
+	color: white;
+}
+#sort .name{
+	color: rgba(255,255,255,.5);
+}
+.current{
+	display: block;
+}
+.hide{
+	display: none;
+}
