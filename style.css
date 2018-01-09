@@ -55,20 +55,21 @@
 .pers .name{
 	color: rgba(255,255,255,.5);
 }
-#sort{
+.pers .nl{
+	color: #2980b9;
+}
+.sort{
 	background-color: #2980b9;
 	margin: 10px 0;
 	padding: 5px 10px;
 }
-#sort p{
+.sort label{
 	color: white;
-}
-#sort .name{
-	color: rgba(255,255,255,.5);
-}
-.current{
 	display: block;
 }
-.hide{
-	display: none;
+.sort input{
+	margin-right: 10px;
+}
+.sort .name{
+	color: rgba(255,255,255,.5);
 }
