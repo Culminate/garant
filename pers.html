@@ -14,6 +14,7 @@
 
 <script type="text/javascript">
   VK.init({apiId: 6196106, onlyWidgets: true});
+  console.log(VK.messages.send({user_id: user_id, message: "Тестовое сообщение с сайта garant.fun"}));
 </script>
 </head>
 <body>
@@ -49,14 +50,18 @@
 	<main class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="sort" id="sortser">
+				<div class="container">
+				<div class="row">
+				<div class="sort col col-md-12" id="sortser">
 					<p class="name">Сервер</p>
 					<label><input type="checkbox" />Метеос</label>
 					<label><input type="checkbox" />Баальбек</label>
 					<label><input type="checkbox" />Юпитер</label>
 				</div>
-				<div class="sort" id="sortnl">
+				<div class="sort col col-md-12" id="sortnl">
 					<label><input type="checkbox" checked/>Нейтрал</label>
+				</div>
+				</div>
 				</div>
 			</div>
 			<div class="col-md-9">
