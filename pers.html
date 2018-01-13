@@ -59,7 +59,9 @@
 					<label><input type="checkbox" />Юпитер</label>
 				</div>
 				<div class="sort col col-md-12" id="sortnl">
-					<label><input type="checkbox" checked/>Нейтрал</label>
+					<p class="name">Гильдия</p>
+					<label><input type="checkbox"/>Нейтрал</label>
+					<label><input type="checkbox"/>Бигвар</label>
 				</div>
 				</div>
 				</div>
@@ -69,6 +71,41 @@
 					<table>
 					<tr><td colspan=2  class="name">Сервер</td><td>Баальбек</td><td class="name">Уровень</td><td>90 49%</td><td class="name">Питомец</td><td>Грейд 2</td></tr>
 					<tr><td class="name">Класс</td><td class="nl">Нейтрал</td><td>Призыватель</td><td class="name">Трофеи</td><td>+636хп</td><td class="name">Уровень</td><td>75</td></tr>
+					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
+					</table>
+				</div>
+				<div class="pers" id="00002">
+					<table>
+					<tr><td colspan=2  class="name">Сервер</td><td>Юпитер</td><td class="name">Уровень</td><td>80 9%</td><td class="name">Питомец</td><td>Грейд 3</td></tr>
+					<tr><td class="name">Класс</td><td class="nl">Бигвар</td><td>Призыватель</td><td class="name">Трофеи</td><td>+785хп</td><td class="name">Уровень</td><td>48</td></tr>
+					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
+					</table>
+				</div>
+				<div class="pers" id="00003">
+					<table>
+					<tr><td colspan=2  class="name">Сервер</td><td>Юпитер</td><td class="name">Уровень</td><td>80 9%</td><td class="name">Питомец</td><td>Грейд 3</td></tr>
+					<tr><td class="name">Класс</td><td class="nl">Бигвар</td><td>Призыватель</td><td class="name">Трофеи</td><td>+785хп</td><td class="name">Уровень</td><td>48</td></tr>
+					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
+					</table>
+				</div>
+				<div class="pers" id="00004">
+					<table>
+					<tr><td colspan=2  class="name">Сервер</td><td>Юпитер</td><td class="name">Уровень</td><td>80 9%</td><td class="name">Питомец</td><td>Грейд 3</td></tr>
+					<tr><td class="name">Класс</td><td class="nl">Бигвар</td><td>Призыватель</td><td class="name">Трофеи</td><td>+785хп</td><td class="name">Уровень</td><td>48</td></tr>
+					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
+					</table>
+				</div>
+				<div class="pers" id="00005">
+					<table>
+					<tr><td colspan=2  class="name">Сервер</td><td>Юпитер</td><td class="name">Уровень</td><td>80 9%</td><td class="name">Питомец</td><td>Грейд 3</td></tr>
+					<tr><td class="name">Класс</td><td class="nl">Бигвар</td><td>Призыватель</td><td class="name">Трофеи</td><td>+785хп</td><td class="name">Уровень</td><td>48</td></tr>
+					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
+					</table>
+				</div>
+				<div class="pers" id="00006">
+					<table>
+					<tr><td colspan=2  class="name">Сервер</td><td>Юпитер</td><td class="name">Уровень</td><td>80 9%</td><td class="name">Питомец</td><td>Грейд 3</td></tr>
+					<tr><td class="name">Класс</td><td class="nl">Бигвар</td><td>Призыватель</td><td class="name">Трофеи</td><td>+785хп</td><td class="name">Уровень</td><td>48</td></tr>
 					<tr><td colspan=2 class="name">Улучшенные скилы</td><td colspan=5>Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
 					</table>
 				</div>
@@ -87,44 +124,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
-	function sortser() {
+	let allsort = 2
+	function sort(path) {
 		let notall = true;
-		$('#sortser input').each(function(){
+		$(path + ' input').each(function(){
 			let text = $(this).parent().text();
 			if ($(this).prop('checked')) {
 				notall = false;
 				let vl = $('td:contains("' + text +'")').parents(".pers").val();
 				$('td:contains("' + text +'")').parents(".pers").val(parseInt(vl) + 1);
+				console.log(text + " PLUS " + $('td:contains("' + text +'")').parents(".pers").val());
+
 			} else {
-				if ($('#sortser input:checkbox:checked').length > 0){
+				if ($(path + ' input:checkbox:checked').length > 0){
 					let vl = $('td:contains("' + text +'")').parents(".pers").val();
 					$('td:contains("' + text +'")').parents(".pers").val(parseInt(vl) - 1);
+					console.log(text + " MINUS " + $('td:contains("' + text +'")').parents(".pers").val());
 				}
 			}
 		});
 		if (notall) {
-			let vl = $('.pers').val();
-			$('.pers').val(parseInt(vl) + 1);
+			$(".pers").each(function(){
+				$(this).val(parseInt($(this).val()) + 1);
+			});
 		}
-	}
-
-	function sortnl() {
-		$(".pers").each(function(){
-			let text = $('#sortnl label').text();
-			if ($('#sortnl input').prop('checked')) {
-				let vl = $(this).val();
-				$(this).val(parseInt(vl) + 1);
-			} else {
-				let vl = $(this).val();
-				$(this).val(parseInt(vl) - 1);
-			}
-		});
 	}
 
 	function hideshow() {
 		$(".pers").each(function(){
-			if (parseInt($(this).val()) == 2) {
+			console.log($(this).val())
+			if (parseInt($(this).val()) == allsort) {
 				$(this).slideDown();
 			} else {
 				$(this).slideUp();
@@ -134,8 +163,9 @@
 
 	$('.sort input').click(function(){
 		$(".pers").val(0);
-		sortser();
-		sortnl();
+		console.log("ZERO")
+		sort("#sortser");
+		sort("#sortnl");
 		hideshow();
 	});
 
