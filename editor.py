@@ -104,8 +104,8 @@ class GarantPers(Garantlxml):
         self.td = td
         self.ld = ld
 
-        self.serverlist = ("Баалбек", "Хуньхуянь", "Выньсуньхунь")
-        self.classlist = ("Призыватель", "Убиватель", "Охуеватель")
+        self.serverlist = ("Баалбек", "Югенес")
+        self.classlist = ("Призыватель", "Ассасин", "Маг", "Рыцарь", "Рейнджер")
         self.guildlist = ("Нейтрал", "Бигвар")
         self.label = [
                         ["Сервер",  0, 0],
