@@ -7,15 +7,11 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
+	<link rel="icon" href="img/21.png" type="images/png">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 			<!-- Put this script tag to the <head> of your page -->
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?147"></script>
-
-<script type="text/javascript">
-  VK.init({apiId: 6196106, onlyWidgets: true});
-  console.log(VK.messages.send({user_id: user_id, message: "Тестовое сообщение с сайта garant.fun"}));
-</script>
 </head>
 <body>
 	<header class="container">
@@ -31,15 +27,25 @@
 							<a class="nav-link active" href="/">Главная</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="https://vk.com/vladr2oboje">Вконтакте</a>
+							<a class="nav-link" target="_blank" href="https://vk.com/vladr2oboje">Вконтакте</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="pravila.html">Правила покупки / продажи</a>
+							<a class="nav-link" href="pravila.html ">Правила покупки / продажи</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 	</header>
+
+	<div class="toto container">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-9">
+				<p>Для покупки / продажи игровых ценностей и персонажей обратитесь к <a target="_blank" href="https://vk.com/write112931005">администратору сайта</a></p>
+			</div>
+		</div>
+	</div>
+	
 	<main class="container">
 		<div class="row">
 			<div class="col-md-3">
@@ -72,17 +78,23 @@
 				</div>
 			</div>
 			<div class="col-md-9">
-				<div class="pers" id="00001">
+<!-- 				<div class="pers">
 					<table>
 					<tr><td class="name">Сервер</td><td class="nl">Персонажи</td><td>Югенес</td><td class="name">Уровень</td><td>80 40%</td><td class="name">Питомец</td><td>Грейд 2</td></tr>
 					<tr><td class="name">Класс</td><td class="nl">Нейтрал</td><td>Рыцарь</td><td class="name">Трофеи</td><td>+636хп</td><td class="name">Уровень</td><td>75</td></tr>
 					<tr><td colspan="2" class="name">Улучшенные скилы</td><td colspan="5">Сильный выстрел, Мастерство магии, Призыв тотема ориед</td></tr>
 					</table>
-				</div>
-				<div class="pers" id="00006">
+				</div> -->
+				<div class="pers">
 					<table>
-					<tr><td class="name">Сервер</td><td>Югенес</td>
-					<tr><td class="name">Шмот</td><td>Пизда кентавра</td></tr>
+					<tr><td class="name">Сервер</td><td>Югенес</td> </tr>
+					<tr><td class="name">Шмот</td><td>Аля+9</td><td>ЖПД+9</td></tr>
+					</table>
+				</div>
+				<div class="pers">
+					<table>
+					<tr><td class="name">Сервер</td><td>Метеос</td> </tr>
+					<tr><td class="name">Шмот</td><td>Аля+9</td><td>ЖПД+9</td></tr>
 					</table>
 				</div>
 			</div>
@@ -102,6 +114,7 @@
 <script type="text/javascript">
 	let allsort = 4
 	function sort(path) {
+		console.log(path);
 		let notall = true;
 		$(path + ' input').each(function(){
 			let text = $(this).parent().text();
@@ -109,17 +122,19 @@
 				notall = false;
 				let vl = $('td:contains("' + text +'")').parents(".pers").val();
 				$('td:contains("' + text +'")').parents(".pers").val(parseInt(vl) + 1);
+				console.log($('td:contains("' + text +'")'));
 				console.log(text + " PLUS " + $('td:contains("' + text +'")').parents(".pers").val());
-
 			} else {
 				if ($(path + ' input:checkbox:checked').length > 0){
 					let vl = $('td:contains("' + text +'")').parents(".pers").val();
 					$('td:contains("' + text +'")').parents(".pers").val(parseInt(vl) - 1);
+					console.log($('td:contains("' + text +'")'));
 					console.log(text + " MINUS " + $('td:contains("' + text +'")').parents(".pers").val());
 				}
 			}
 		});
 		if (notall) {
+			console.log("PLUS not all");
 			$(".pers").each(function(){
 				$(this).val(parseInt($(this).val()) + 1);
 			});
@@ -128,7 +143,6 @@
 
 	function hideshow() {
 		$(".pers").each(function(){
-			console.log($(this).val())
 			if (parseInt($(this).val()) == allsort) {
 				$(this).slideDown();
 			} else {
@@ -139,11 +153,10 @@
 
 	$('.sort input').click(function(){
 		$(".pers").val(0);
-		console.log("ZERO")
 		sort("#sortser");
-		sort("#sortcl");
-		sort("#sortnl");
 		sort("#sorttype");
+		sort("#sortnl");
+		sort("#sortcl");
 		hideshow();
 	});
 
